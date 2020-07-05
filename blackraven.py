@@ -69,7 +69,7 @@ def monitor_file_auditd(decoy_name):
                     continue
                 try:
                     m = re.search(
-                        r"pid\=(?P<pid>[0-9]+)\s.*\sexe\=(?P<exe>\S+)\s", event_data[-2])
+                        r"\spid\=(?P<pid>[0-9]+)\s.*\sexe\=(?P<exe>\S+)\s", event_data[-2])
                     pid = m.group("pid")
                     exe = m.group("exe")
                 except AttributeError:
